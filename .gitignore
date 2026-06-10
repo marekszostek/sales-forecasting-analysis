@@ -1,3 +1,13 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
 # Raw data
 data/raw/*.csv
 
