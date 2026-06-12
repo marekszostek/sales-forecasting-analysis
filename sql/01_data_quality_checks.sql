@@ -1,49 +1,53 @@
+/*
+Sales Forecasting Analysis
+Data Quality Validation Checks
+*/
 -- Row Counts
 
-select count(*) from sales;
-select count (*) from transactions;
-select count (*) from stores;
-select count (*) from holidays_events;
+SELECT COUNT(*) FROM sales;
+SELECT COUNT(*) FROM transactions;
+SELECT COUNT(*) FROM stores;
+SELECT COUNT(*) FROM holidays_events;
 
 -- Null Values Check
 
-select count(*) from sales
-where sales is null;
+SELECT COUNT(*) FROM sales
+WHERE sales IS NULL;
 
-select count(*) from sales
-where store_nbr is null;
+SELECT COUNT(*) FROM sales
+WHERE store_nbr IS NULL;
 
-select count(*) from sales
-where family is null;
+SELECT COUNT(*) FROM sales
+WHERE family IS NULL;
 
-select count(*) from sales
-where date is null;
+SELECT COUNT(*) FROM sales
+WHERE date IS NULL;
 
-select count(*) from stores
-where store_nbr is null;
+SELECT COUNT(*) FROM stores
+WHERE store_nbr IS NULL;
 
-select count(*) from holidays_events
-where type is null;
+SELECT COUNT(*) FROM holidays_events
+WHERE type IS NULL;
 
-select count(*) from transactions
-where transactions is null;
+SELECT COUNT(*) FROM transactions
+WHERE transactions IS NULL;
 
 -- Duplicate Check
 
-select date, store_nbr, family, count(*)
-from sales
-group by date, store_nbr, family
-having count(*) > 1;
+SELECT date, store_nbr, family, COUNT(*)
+FROM sales
+GROUP BY date, store_nbr, family
+HAVING COUNT(*) > 1;
 
 -- Date Range Check
 
-select min(date) as min_date, max(date) as max_date
-from sales;
+SELECT MIN(date) AS min_date, MAX(date) AS max_date
+FROM sales;
 
 -- Entity validation
 
-select count(distinct store_nbr) as unique_stores
-from sales;
+SELECT COUNT(DISTINCT store_nbr) AS unique_stores
+FROM sales;
 
-select count(distinct family) as unique_product_families
-from sales;
+SELECT COUNT(DISTINCT family) AS unique_product_families
+FROM sales;
