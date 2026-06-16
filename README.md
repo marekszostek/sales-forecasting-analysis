@@ -4,7 +4,7 @@
 
 This project analyzes historical grocery sales data from Corporación Favorita, one of Ecuador's largest retail chains.
 
-Dataset source:
+Dataset source: Kaggle – Store Sales Time Series Forecasting
 https://www.kaggle.com/competitions/store-sales-time-series-forecasting/data
 
 The goal of the project is to build an end-to-end analytics workflow covering:
@@ -69,18 +69,22 @@ sales-forecasting-analysis/
 │   └── etl_load.py
 │
 ├── sql/
-├── create_tables.sql
-├── 01_data_quality_checks.sql
-├── 02_sales_analysis.sql
-├── 03_store_analysis.sql
-├── 04_product_analysis.sql
-└── 05_forecast_preparation.sql
-│
+│   ├── create_tables.sql
+│   ├── 01_data_quality_checks.sql
+│   ├── 02_sales_analysis.sql
+│   ├── 03_store_analysis.sql
+│   ├── 04_product_analysis.sql
+│   ├── 05_forecast_preparation.sql
+│   └── 06_dashboard_views.sql
+├── screenshots/
+│   ├── Dashboard_1.png
+│   └── Dashboard_2.png
+|
 ├── .env.example
 ├── requirements.txt
 └── README.md
 ```
-
+---
 ## Key Insights
 
 ### Promotion Effectiveness
@@ -101,10 +105,30 @@ Store 51 generated the highest revenue per transaction despite not ranking among
 
 ---
 
+## Dashboard Features
+
+The Power BI dashboard provides:
+
+- Executive KPI overview
+- Revenue trend analysis over time
+- Product family performance comparison
+- Revenue per transaction analysis by city
+- Promotion effectiveness analysis
+
+---
+
+## Dashboard Preview
+
+### Sales Performance Dashboard
+![Dashboard 1](screenshots/Dashboard_1.png)
+
+### Business Performance Analysis
+![Dashboard 2](screenshots/Dashboard_2.png)
+
+---
 ## Future Improvements
 
-- Build an interactive Power BI dashboard
 - Develop sales forecasting models
 - Analyze holiday impact on sales performance
 - Explore store clustering and segmentation
-- Create business views for Power BI reporting
+- Build predictive demand forecasting solutions
